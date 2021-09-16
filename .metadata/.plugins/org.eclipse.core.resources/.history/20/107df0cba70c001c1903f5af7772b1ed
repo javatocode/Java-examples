@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+ http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx.xsd
+ http://www.springframework.org/schema/mvc
+ http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ ">
+ 
+ <context:component-scan base-package="com.springmvc"/>
+ 
+ <mvc:annotation-driven />
+ <mvc:resources location="/WEB-INF/vendor/" mapping="/vendor/**" />
+
+ <tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" />
+ 
+ <bean name="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+ 
+ <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+ name="viewResolver"
+ p:prefix="/WEB-INF/views/"
+ p:suffix=".jsp"
+ /> 
+ 
+ <mvc:interceptors>
+ <mvc:interceptor>
+ <mvc:mapping  path="/reg"/>
+ <bean class="com.springmvc.Interceptor.ActionInterceptor"></bean>
+ </mvc:interceptor>
+ </mvc:interceptors>
+ 
+ 
+ <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+ name="ds"
+ p:driverClassName="com.mysql.cj.jdbc.Driver" 
+ p:url="jdbc:mysql://localhost:3307/springjdbc"
+ p:username="root"
+ p:password="Lufa@7917"
+ />
+ 
+ <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="factory">
+ 
+<!--  data source -->
+ <property name="dataSource" ref="ds" ></property>
+ 
+<!--  hibernate three properties -->
+ <property name="hibernateProperties">
+ <props>
+	 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+	 <prop key="hibernate.show_sql">true</prop>
+	 <prop key="hibernate.hbm2ddl.auto">update</prop>
+ </props>
+ 
+ </property>
+ 
+ <!-- annoted classes -->
+ 
+ <property name="annotatedClasses">
+ <list>
+ <value>
+ </value>
+
+ </list>
+ </property>
+ </bean>
+ 
+
+ <bean 
+ class="org.springframework.orm.hibernate5.HibernateTemplate"
+ name="hibernateTemplate">
+ <property name="sessionFactory" ref="factory"></property>
+ </bean>
+ 
+ <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
+ <property name="sessionFactory" ref="factory"></property>
+ </bean> 
+ 
+ 
+ </beans>

@@ -1,0 +1,33 @@
+package com.spring.removeconfig;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+
+public class Employee {
+	
+	@Value("jay")
+	private String ename;
+	
+	static void display2() {
+		System.out.println("I am prititng..emp");
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [ename=" + ename + "]";
+	}
+
+	
+	
+}

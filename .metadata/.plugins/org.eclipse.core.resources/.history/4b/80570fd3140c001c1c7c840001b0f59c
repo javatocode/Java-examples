@@ -1,0 +1,14 @@
+package com.ingle.Jsonconvert;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        // convert java to json
+    	ObjectMapper mapper = new ObjectMapper();
+    }
+}

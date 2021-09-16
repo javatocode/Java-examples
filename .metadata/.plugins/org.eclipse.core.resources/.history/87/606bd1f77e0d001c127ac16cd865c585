@@ -1,0 +1,5 @@
+package com.ingle.service;
+
+public class PaymentServicesImp implements paymentService{
+
+}

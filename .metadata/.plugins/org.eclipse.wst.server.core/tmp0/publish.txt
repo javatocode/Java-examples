@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Fri Sep 03 20:25:06 IST 2021
+org.eclipse.jst.j2ee.server\:springmvc=D\:\\server\\tomcat\\wtpwebapps\\springmvc
+org.eclipse.jst.j2ee.server\:springmvc_crud=D\:\\server\\tomcat\\wtpwebapps\\springmvc_crud
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Ajay's\\.m2\\repository\\org\\springframework\\spring-web\\5.2.8.RELEASE\\spring-web-5.2.8.RELEASE.jar=D\:\\server\\tomcat\\wtpwebapps\\springmvc_crud\\WEB-INF\\lib\\spring-web-5.2.8.RELEASE.jar

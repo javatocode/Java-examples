@@ -1,0 +1,10 @@
+package com.spring.removeconfig;
+
+import org.springframework.stereotype.Component;
+
+
+public class Employee {
+	static void display2() {
+		System.out.println("I am prititng..emp");
+	}
+}

@@ -1,0 +1,46 @@
+package com.spring.removeconfig;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+
+
+public class Employee {
+	
+	@Value("jay")
+	private String ename;
+	
+
+	@Qualifier("lemp")
+	private List<Integer> rate;
+	static void display2() {
+		System.out.println("I am prititng..emp");
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [ename=" + ename + ", rate=" + rate + "]";
+	}
+
+	public List<Integer> getRate() {
+		return rate;
+	}
+
+	public void setRate(List<Integer> rate) {
+		this.rate = rate;
+	}
+	
+
+	
+	
+}

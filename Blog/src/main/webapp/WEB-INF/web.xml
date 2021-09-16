@@ -1,0 +1,49 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>GetStudController</servlet-name>
+  	<display-name>GetStudController</display-name>
+  	<description></description>
+  	<servlet-class>com.ingle.web.GetStudController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PostStudContoller</servlet-name>
+  	<display-name>PostStudContoller</display-name>
+  	<description></description>
+  	<servlet-class>com.ingle.web.PostStudContoller</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateStudController</servlet-name>
+  	<display-name>UpdateStudController</display-name>
+  	<description></description>
+  	<servlet-class>com.ingle.web.UpdateStudController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteStudController</servlet-name>
+  	<display-name>DeleteStudController</display-name>
+  	<description></description>
+  	<servlet-class>com.ingle.web.DeleteStudController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>GetStudController</servlet-name>
+  	<url-pattern>/fetch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PostStudContoller</servlet-name>
+  	<url-pattern>/post_data</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateStudController</servlet-name>
+  	<url-pattern>/update_data</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteStudController</servlet-name>
+  	<url-pattern>/delete_data</url-pattern>
+  </servlet-mapping>
+
+</web-app>

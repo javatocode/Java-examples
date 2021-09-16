@@ -1,0 +1,10 @@
+package com.ingle.modal;
+
+import java.util.List;
+
+public class Student {
+private int sid;
+private String sname;
+private List<String> subject;
+private Address address;
+}

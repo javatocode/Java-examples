@@ -1,0 +1,15 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<%@ page isELIgnored="false"%>
+<%@include file="./base.jsp" %>
+</head>
+<body>
+<div class="container mt-3">
+<div class="row">
+<div class="col-md-6 offset-md-3" >
+</div>
+</div>
+</div>
+</body>
+</html>

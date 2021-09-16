@@ -1,0 +1,108 @@
+package vijayalakshmibank.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+
+import vijayalakshmibank.conn.JDBCConn;
+import vijayalakshmibank.modal.AccountRegister;
+
+
+
+
+public class AccountRegisterDao {
+	
+
+	public AccountRegister postaccounts(long acc_no, String acc_name, String acc_email, String acc_city, String acc_gender,
+			String acc_state, String acc_password, String acc_confirm_password, int acc_zipcode, String acc_type) {
+		// TODO Auto-generated method stub
+		AccountRegister s = new AccountRegister();
+		try {
+			Connection con = JDBCConn.createConn();
+			String q = "insert into accountregister(account_no,name,city,state,gender,password,confirmpassword,zipcode,email,accounttype) values(?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement pst = con.prepareStatement(q);
+            pst.setLong(1,acc_no);
+            pst.setString(2, acc_name);
+            pst.setString(3, acc_city);
+            pst.setString(4, acc_state);
+            pst.setString(5, acc_gender);
+            pst.setString(6, acc_password);
+            pst.setString(7, acc_confirm_password);
+            pst.setInt(8, acc_zipcode);
+            pst.setString(9, acc_email);
+            pst.setString(10, acc_type);
+            pst.executeUpdate();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return s;
+	}
+	
+	public AccountRegister getaccounts(String acc_username, String pass) {
+		AccountRegister s = new AccountRegister();
+		
+		try {
+			Connection con = JDBCConn.createConn();
+			
+			PreparedStatement  st = con.prepareStatement("select * from accountregister where name = ? and password = ? " );
+			st.setString(1, acc_username);
+			st.setString(2, pass);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				s.setName(rs.getString("name"));
+				s.setPassword(rs.getString("password"));
+			}
+			
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		
+		return s;
+	}
+
+	public AccountRegister post_deposite( String amount, String opeartion, String timeStamp) {
+		AccountRegister s = new AccountRegister();
+		
+		try {
+			Connection con = JDBCConn.createConn();
+			String q = "insert into accountop (amount,dateview, operation) values(?,?,?)";
+            PreparedStatement pst = con.prepareStatement(q);
+          
+            pst.setString(1, amount);
+            pst.setString(2, timeStamp);
+            pst.setString(3, opeartion);
+            pst.executeUpdate();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return s;
+	}
+
+	public AccountRegister post_withdraw(String amount, String opeartion, String timeStamp) {
+       AccountRegister s = new AccountRegister();
+		
+		try {
+			Connection con = JDBCConn.createConn();
+			PreparedStatement  st = con.prepareStatement("select * from accountop" );
+			String q1 = "select last (amount) from accountop";
+			System.out.println(q1);
+			String q = "insert into accountop (amount,dateview, operation) values(?,?,?)";
+            PreparedStatement pst = con.prepareStatement(q);
+          
+            pst.setString(1, amount);
+            pst.setString(2, timeStamp);
+            pst.setString(3, opeartion);
+            pst.executeUpdate();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return s;
+	}
+
+	
+	
+	
+}

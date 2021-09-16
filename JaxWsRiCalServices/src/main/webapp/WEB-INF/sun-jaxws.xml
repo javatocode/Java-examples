@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+<endpoint name="cService" implementation="com.ingle.services.CalServicesImp" url-pattern="/calService" />
+<!-- <endpoint name="fileService" implementation="com.ingle.services.CalServicesImp" url-pattern="/fileService" />
+ -->
+ </endpoints>

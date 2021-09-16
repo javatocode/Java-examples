@@ -1,0 +1,16 @@
+package com.ingle.aop.aspect;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+
+@Component
+@Aspect
+public class MyAspect {
+ // * means all return type 
+	@Before(value = "execution(* com.ingle.service.PaymentServicesImp.makepayment())")
+	public void printBefore() {
+		System.out.println("Payment started..");
+	}
+}

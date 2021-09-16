@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="/ApacheCXFCalService/src/main/webapp/wsdl/calservice.wsdl"/>
+		<item value="http://localhost:8084/Axis2CalService/services/CalService?wsdl"/>
+		<item value="http://localhost:8084/Axis1CalServices/services/CalServices?wsdl"/>
+	</list>
+</section>

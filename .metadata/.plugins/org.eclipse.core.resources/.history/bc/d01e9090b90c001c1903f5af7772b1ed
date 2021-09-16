@@ -1,0 +1,10 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<%@ page isELIgnored="false"%>
+<%@include file="./base.jsp" %>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+package com.ingle.aop.aspect;
+
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class MyAspect {
+
+	public void printBefore() {
+		System.out.println("Payment started..");
+	}
+}

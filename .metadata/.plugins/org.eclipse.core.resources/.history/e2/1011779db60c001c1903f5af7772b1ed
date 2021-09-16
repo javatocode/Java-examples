@@ -1,0 +1,30 @@
+package com.springmvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.view.RedirectView;
+
+@Controller
+public class CrudController {
+	@RequestMapping("/")
+	public String home(Model m) {
+		m.addAttribute("title", "Start App");
+		return "index";
+	}
+	
+	@RequestMapping("/add")
+	public String add(Model m) {
+		m.addAttribute("title", "add product");
+		return "add_product";
+	}
+	
+	// handle product
+	@RequestMapping(value="/addpro",method = RequestMethod.POST)
+	public RedirectView handle() {
+		RedirectView r = new RedirectView();
+		
+		return r;
+	}
+}

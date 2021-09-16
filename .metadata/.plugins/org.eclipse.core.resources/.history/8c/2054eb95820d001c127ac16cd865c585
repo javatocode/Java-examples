@@ -1,0 +1,5 @@
+package com.ingle.aop.aspect;
+
+public class MyAspect {
+
+}

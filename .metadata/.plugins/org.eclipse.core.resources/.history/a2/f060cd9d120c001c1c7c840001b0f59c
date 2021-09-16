@@ -1,0 +1,8 @@
+package com.ingle.modal;
+
+public class Student {
+private int sid;
+private String sname;
+private List<String> subject;
+private Address address;
+}

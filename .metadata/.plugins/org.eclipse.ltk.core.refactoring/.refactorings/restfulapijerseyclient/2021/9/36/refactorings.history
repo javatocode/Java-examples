@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.ingle.client&apos; to &apos;com.ingle.client.primitive&apos;&#x0D;&#x0A;- Original project: &apos;restfulapijerseyclient&apos;&#x0D;&#x0A;- Original element: &apos;restfulapijerseyclient/src/main/java/com.ingle.client&apos;&#x0D;&#x0A;- Renamed element: &apos;restfulapijerseyclient/src/main/java/com.ingle.client.primitive&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.ingle.client&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ingle.client" name="com.ingle.client.primitive" qualified="false" references="true" stamp="1630652907207" textual="false" version="1.0"/>
+</session>

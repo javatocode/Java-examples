@@ -1,0 +1,50 @@
+package com.spring.withxml.studentapp;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Stack;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.operation.InsertData;
+import com.spring.pojo.Student;
+import com.spring.studentdao.StudentDao;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+       ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/config/config.xml");
+       StudentDao sd = context.getBean("studentdaoimp",StudentDao.class);
+ 	   Scanner sc = new Scanner(System.in);
+ 	   
+ 	   System.out.println("Enter your roll no :");
+ 	   int sid = sc.nextInt();
+
+ 	   System.out.println("Enter your name :");
+       String sname = sc.next();
+       
+       System.out.println("Enter your branch :");
+       String sbranch = sc.next();
+       
+       System.out.println("Enter your City :");
+       String city = sc.next();
+ 	  
+ 	   System.out.println("Enter your State :");
+       String state = sc.next();
+       
+       System.out.println("Enter your Zipcode :");
+       String zip = sc.next();
+
+       Student s = InsertData.insert(sid,sname,sbranch,city,state,zip);
+       Stack<Integer> res = sd.insertdata(s);
+       if(res.isEmpty()) {
+    	   System.out.println("Data is not inserted !");
+       }
+       else {
+    	   System.out.println("Data is add successfully !!");
+       }  
+    }
+}

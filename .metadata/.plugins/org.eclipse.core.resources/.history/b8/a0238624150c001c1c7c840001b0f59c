@@ -1,0 +1,18 @@
+package com.ingle.Jsonconvert;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ingle.service.JavatoJson;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        // convert java to json
+    	ObjectMapper mapper = new ObjectMapper();
+    	mapper.writeValue(new File("Student.json"), JavatoJson.javatojsonconvert());
+    }
+}
